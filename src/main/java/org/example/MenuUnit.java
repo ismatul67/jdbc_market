@@ -39,7 +39,10 @@ public class MenuUnit {
             if (unit!=null){
                 System.out.print("Input Description = ");
                 String desc = scanner.nextLine();
+                System.out.print("Input Code = ");
+                String code = scanner.nextLine();
                 unit.setDescription(desc);
+                unit.setCode(code);
                 if (unitService.edit(unit)!=null){
                     System.out.println( unitService.edit(unit));
                 }else{

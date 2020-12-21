@@ -76,9 +76,10 @@ public class UnitServiceImpl implements UnitService {
     @Override
     public String edit(Unit unit) throws SQLException {
 
-        prepstmt = conn.prepareStatement("UPDATE market.unit SET `description`=? WHERE `id`= ?");
+        prepstmt = conn.prepareStatement("UPDATE market.unit SET `description`=? , `code`=? WHERE `id`=?");
         prepstmt.setString(1, unit.getDescription());
-        prepstmt.setInt(2, unit.getId());
+        prepstmt.setString(2, unit.getCode());
+        prepstmt.setInt(3, unit.getId());
         prepstmt.executeUpdate();
 
         return "Item " + unit.getCode() + "has been updated!";

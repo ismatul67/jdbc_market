@@ -28,8 +28,14 @@ public class MenuStock {
             int quantity = scanner.nextInt();
             scanner.nextLine();
             Stock stock = new Stock(itemId,quantity);
-            if (stockService.add(stock)!=null){
-                System.out.println(stockService.add(stock));
+            Stock stockCompare = stockService.findStockByItemId(itemId);
+            boolean isExist = (String.valueOf(itemId).equals(stockCompare.getItemId()));
+            if (!(stock.getItemId()==0 && stock.getQuantity()==0)){
+                if (!isExist){
+                    System.out.println(stockService.add(stock));
+                }else{
+                    System.out.println("Duplicate Data!");
+                }
             }else{
                 System.out.println("failed to add!");
             }

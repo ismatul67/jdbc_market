@@ -25,8 +25,11 @@ public class MenuUnit {
             System.out.print("Input Code = ");
             String code = scanner.nextLine();
             Unit unit = new Unit(code,desc);
-            if (unitService.add(unit)!=null){
+            Unit compareUnit= unitService.findByCode(code);
+            if (!(code.equals(compareUnit.getCode()) || desc.equals(compareUnit.getDescription()))){
                 System.out.println(unitService.add(unit));
+            }else {
+                System.out.println("Duplicate Data!");
             }
         }else if (choose==2){
             System.out.print("Input ID = ");

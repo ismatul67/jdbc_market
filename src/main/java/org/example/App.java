@@ -1,24 +1,11 @@
 package org.example;
 
-import org.example.Entity.Unit;
-import org.example.Impl.ItemServiceImpl;
-import org.example.Impl.StockServiceImpl;
-import org.example.Impl.UnitServiceImpl;
-import org.example.service.ItemService;
-import org.example.service.StockService;
-import org.example.service.UnitService;
-
-import java.sql.SQLException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class App
 {
     static Scanner scanner = new Scanner(System.in);
-    static UnitService unitService = new UnitServiceImpl();
-    static ItemService itemService = new ItemServiceImpl();
-    static StockService stockService = new StockServiceImpl();
-
     public static void main( String[] args ) {
         int choose=0;
         System.out.println("========Welcome To Waikiki Shop======");
@@ -42,7 +29,7 @@ public class App
             }catch (InputMismatchException e){
                 System.out.println("Number only!");
             }catch (Exception e){
-
+                System.out.println(e.getMessage());
             }
 
 

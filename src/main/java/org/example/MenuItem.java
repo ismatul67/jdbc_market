@@ -34,8 +34,14 @@ public class MenuItem {
             int unitId = scanner.nextInt();
             scanner.nextLine();
             Item item = new Item(name,price,unitId);
-            if (itemService.add(item)!=null){
-                System.out.println(itemService.add(item));
+            Item itemCompare = itemService.findByName(name);
+            boolean isExist = name.equals(itemCompare.getName());
+            if (!(item.getName().isEmpty() && item.getPrice()==0 && item.getUnitId()==0)){
+                if (!isExist){
+                    System.out.println(itemService.add(item));
+                }else{
+                    System.out.println("Duplicate Data");
+                }
             }else{
                 System.out.println("Failed to add");
             }

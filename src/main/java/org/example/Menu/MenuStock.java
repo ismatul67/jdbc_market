@@ -1,4 +1,4 @@
-package org.example;
+package org.example.Menu;
 
 import org.example.Entity.Stock;
 import org.example.Impl.StockServiceImpl;

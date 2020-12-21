@@ -16,6 +16,7 @@ public class MenuUnit {
         System.out.println("=====Unit Menu====");
         CommonMenu.printCommonMenu();
         System.out.println("6. Find By Code");
+        System.out.println("7. Back");
         System.out.print("Choose : ");
         int choose = scanner.nextInt();
         scanner.nextLine();
@@ -91,7 +92,9 @@ public class MenuUnit {
             }else{
                 System.out.println("Unit not found!");
             }
-        }else{
+        }else if(choose==7){
+            System.out.println("You are back to main menu");
+        }else {
             System.out.println("Menu tidak tersedia!");
         }
     }

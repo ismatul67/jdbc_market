@@ -21,8 +21,10 @@ public class MenuItem {
         CommonMenu.printCommonMenu();
         System.out.println("6. Find By Name");
         System.out.println("7. Find Most Item in Stock");
+        System.out.println("8. Back");
         System.out.print("Choose : ");
-        int choose = scanner.nextInt();
+        int choose=0;
+        choose = scanner.nextInt();
         scanner.nextLine();
         if (choose==1){
             System.out.print("Input Name = ");
@@ -116,6 +118,8 @@ public class MenuItem {
                     System.out.println("======================================");
                 }
             }
+        }else if(choose==8){
+            System.out.println("You are back to main menu");
         }else{
             System.out.println("Menu tidak tersedia!");
         }

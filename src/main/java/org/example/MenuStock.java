@@ -17,6 +17,7 @@ public class MenuStock {
         CommonMenu.printCommonMenu();
         System.out.println("6. Find greater than quantity");
         System.out.println("7. Find less than quantity");
+        System.out.println("8. Back");
         System.out.print("Choose : ");
         int choose = scanner.nextInt();
         scanner.nextLine();
@@ -115,9 +116,11 @@ public class MenuStock {
                     System.out.println("======================================");
                 }
             }
-        }else{
-            System.out.println("Menu tidak tersedia!");
-        }
+        }else if(choose==8){
+            System.out.println("You are back to main menu");
+        }else {
+                System.out.println("Menu tidak tersedia!");
+            }
     }
 
     public static void commonPrintStock(Stock stock){

@@ -9,7 +9,7 @@ public class App
     public static void main( String[] args ) {
         int choose=0;
         System.out.println("========Welcome To Waikiki Shop======");
-        while (choose<4){
+        while (choose!=4){
             menu();
             try {
                 choose= scanner.nextInt();
